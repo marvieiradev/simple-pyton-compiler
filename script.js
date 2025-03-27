@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function executeCode(code, inputs = []) {
     const outputElement = document.getElementById("output");
-    outputElement.textContent = "Running...";
+    outputElement.textContent = "🔄 Running...";
 
     inputs.forEach((input, index) => {
       code = code.replace(/input\((?:'|"|´)(.*?)(?:'|"|´)\)/, `"${input}"`);
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const output = result.run.output || "No output!";
       outputElement.innerHTML = `> ${output}`;
     } catch (error) {
-      outputElement.textContent = "Error" + error.message;
+      outputElement.textContent = "⚠️ Error" + error.message;
     }
   }
 
